@@ -40,21 +40,53 @@ The solution to avoiding software regressions? [[http://en.wikipedia.org/wiki/Re
 * Running the current test suite
 
 So long as you are on an up-to-date release of Org-mode you may run
-the tests on your local setup. 
+the tests on your local setup. The tests will run on versions of Emacs
+back to version 22.
 
-** TODO Emacs-22 / Emacs-23
+** Emacs-22 / Emacs-23
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat.
+In Emacs-22 and Emacs-23 you will need to download the test files
+_ert.el_ and _ert-x.el_ to your testing directory. This may be
+accomplished with the following commands entered on the command line.
 
-** TODO Emacs-24
+#+begin_src 
+cd /path/to/org-mode/testing
+curl -O https://github.com/mirrors/emacs/raw/master/lisp/emacs-lisp/ert.el
+curl -O https://github.com/mirrors/emacs/raw/master/lisp/emacs-lisp/ert-x.el
+#+end_src
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. 
+Alternatively you can download the files within your browser.
+
+ - browse to [[https://github.com/mirrors/emacs/tree/master/lisp/emacs-lisp][github.com/mirrors/emacs/lisp/emacs-lisp]]
+ - right click ert.el link and select _download linked file_ (or
+   equivalent) and save to org-mode/testing/ert.el
+ - right click ert-x.el link and select _download linked file_ (or
+   equivalent) and save to org-mode/testing/ert-x.el
+
+Thats it - you may now run the tests.
+
+** Emacs-24
+
+Emacs-24 ships with the test library as standard, so nothing to do.
+
+** Run tests from the command line
+
+To run the tests from the command line (without loading your personal
+configurations) use the following commands.
+
+#+begin_src 
+cd /path/to/org-mode/testing
+Emacs -Q -batch -l org-test.el -eval "(setq org-confirm-babel-evaluate nil)" -f org-test-run-batch-tests'
+#+end_src
+
+** Run tests from within Emacs
+
+To run the tests from within Emacs itself.
+
+#+begin_src 
+M-x load-file RET /path/to/org-mode/testing/org-test.el
+M-x org-test-run-all-tests
+#+end_src
 
 * Can I write tests?
 

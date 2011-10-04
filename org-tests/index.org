@@ -15,18 +15,67 @@
 [[file:../index.org][{Back to Worg's index}]]
 
 
-Org-mode has grown a big and feature rich application. Help is always needed and
-highly appreciated. If you're not a lisp programmer, you still might help to
-prevent regressions and greatly improve the stability of Org-mode.
+* Why test?
 
-This page is meant to provide help with this kind of helping. We hope to provide
-all the information needed here, and hope to create tests for non-programmers
-too.
+Org-mode has grown into a popular large and feature-rich application,
+on which development often happens at a great pace. Indeed, feature
+requests posted on the [[file:org-mailing-list.org][Org mailing list]] are frequently developed and
+made available to Org-mode users within hours of the request. 
 
-Currently we are in a very early planning phase, so will find only what we
-_want_ to do. If you're not a worger yet, you may as well post ideas or code to
-the great [[file:org-mailing-list.org][Org mailing list]].
+The down-side of such rapid development is that on some occasions, one
+of the many patches, features, or [[http://en.wikipedia.org/wiki/Code_refactoring][refactoring]]s being applied to the
+code-base may unintentionally cause unexpected behavior within
+Org-mode. This is known as a [[http://en.wikipedia.org/wiki/Software_regression][software regression]]. The larger and more
+complex Org-mode becomes, the more you should expect to see such software
+regressions.
 
+One concern with introducing software regressions is that the
+regression may not be immediately obvious to users. Indeed it can be
+hours, days, or even months before an Org-mode user moves to export an
+important schedule, when "bang" - the regression has reared its ugly
+head.
+
+The solution to avoiding software regressions? [[http://en.wikipedia.org/wiki/Regression_testing][Regression Testing]]!
+
+* Running the current test suite
+
+So long as you are on an up-to-date release of Org-mode you may run
+the tests on your local setup. 
+
+** TODO Emacs-22 / Emacs-23
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.
+
+** TODO Emacs-24
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. 
+
+* Can I write tests?
+
+Most certainly! Even if you're not a lisp programmer, you may still
+help prevent regressions and greatly improve the stability of
+Org-mode. In fact, thanks to the growing number of test-macros that
+are available you can write regression tests with very minimal lisp
+knowledge, and you are likely to greatly improve your knowledge of
+lisp as a result. And the more tests you write, the more confident you
+may be that your personal use of the many Org-mode features available
+has not been affected by regression. 
+
+And of course, help improving the Org-mode test-suite is highly
+appreciated.
+
+* Preparing to write tests
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. 
 
 * Aims
 

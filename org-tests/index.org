@@ -56,11 +56,11 @@ In Emacs-22 and Emacs-23 you will need to download the test files
 _ert.el_ and _ert-x.el_ to your testing directory. This may be
 accomplished with the following commands entered on the command line.
 
-#+begin_src 
+#+example
 cd /path/to/org-mode/testing
 curl -O https://github.com/mirrors/emacs/raw/master/lisp/emacs-lisp/ert.el
 curl -O https://github.com/mirrors/emacs/raw/master/lisp/emacs-lisp/ert-x.el
-#+end_src
+#+end_example
 
 Alternatively you can download the files within your browser.
 
@@ -81,19 +81,19 @@ Emacs-24 ships with the test library as standard, so nothing to do.
 To run the tests from the command line (without loading your personal
 configurations) use the following commands.
 
-#+begin_src 
+#+example
 cd /path/to/org-mode/testing
 Emacs -Q -batch -l org-test.el -eval "(setq org-confirm-babel-evaluate nil)" -f org-test-run-batch-tests'
-#+end_src
+#+end_example
 
 ** Run tests from within Emacs
 
 To run the tests from within Emacs itself.
 
-#+begin_src 
+#+example
 M-x load-file RET /path/to/org-mode/testing/org-test.el
 M-x org-test-run-all-tests
-#+end_src
+#+end_example
 
 * Can I write tests?
 
@@ -101,10 +101,10 @@ Most certainly! Even if you're not a lisp programmer, you may still
 help prevent regressions and greatly improve the stability of
 Org-mode. In fact, thanks to the growing number of test-macros that
 are available you can write regression tests with very minimal lisp
-knowledge, and you are likely to greatly improve your knowledge of
-lisp as a result. And the more tests you write, the more confident you
-may be that your personal use of the many Org-mode features available
-has not been affected by regression. 
+knowledge, and you are also likely to greatly improve your knowledge
+of lisp as a result. And the more tests you write, the more confident
+you may be that your personal use of the many Org-mode features
+available has not been affected by regression.
 
 And of course, help improving the Org-mode test-suite is highly
 appreciated.
@@ -194,14 +194,6 @@ I implemented a toy test of org's html export facility using ert.el.
 See [[file:ert-publish-test.el]] for the implementation.  To run the test
 open up org-publish-test.el, and =M-x eval-buffer=.  This should load
 ert, and run the simple html export test.
-
-* Clipboard
-
-Running a minimal emacs should suppress custom config files:
-: emacs -q -l yourtest.el
-
-Getting a list of all variables (incomplete):
-: grep -r defvar lisp/*.el
 
 * COMMENT buffer dictionary
 

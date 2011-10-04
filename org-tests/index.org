@@ -23,7 +23,7 @@ requests posted on the [[file:org-mailing-list.org][Org mailing list]] are frequ
 made available to Org-mode users within hours of the request. 
 
 The down-side of such rapid development is that on some occasions, one
-of the many patches, features, or [[http://en.wikipedia.org/wiki/Code_refactoring][refactoring]]s being applied to the
+of the many patches, features, or [[http://en.wikipedia.org/wiki/Code_refactoring][refactorings]] being applied to the
 code-base may unintentionally cause unexpected behavior within
 Org-mode. This is known as a [[http://en.wikipedia.org/wiki/Software_regression][software regression]]. The larger and more
 complex Org-mode becomes, the more you should expect to see such software
